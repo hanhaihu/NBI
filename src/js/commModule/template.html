@@ -1,0 +1,37 @@
+<script type="text/template" id="tabletemplate">
+    <table class="m-table">
+        <thead>
+            <tr>
+                <% _.each(thead,function( item , index ){ %>
+                    <th>
+                        <span><%=item%></span>
+                        <b class="ascico">↑</b>
+                        <b class="desico">↓</b>
+                    </th>
+                    <% }) %>
+            </tr>
+        </thead>
+        <tbody>
+            <% _.each(tbody,function( items , index ){ %>
+                <tr>
+                    <% _.each(items,function( item ){%>
+                        <td>
+                            <%=item%>
+                        </td>
+                        <%})%>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</script>
+<script type="text/template" id="tbodytemplate">
+    <% _.each(tbody,function( items , index ){ %>
+        <tr>
+            <% _.each(items,function( item ){%>
+                <td>
+                    <%=item%>
+                </td>
+                <%})%>
+        </tr>
+        <% }) %>
+</script>

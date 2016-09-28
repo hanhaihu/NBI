@@ -1,0 +1,141 @@
+<div class="p-entSession">
+    <!--筛选操作区域-->
+    <section class="retention-filter">
+        <p class="firstLine" style="padding-left:20px">
+            <!--企业规模-->
+            <label for="">
+                <span style="margin-left:-10px">企业规模</span>
+                <br>
+                <select class="multiple" id="scope" data-model="scope">
+                    <option value="all">全选</option>
+                </select>
+            </label>
+            <!--行业类别-->
+            <label>
+                <span style="margin-left:-10px">行业类别</span>
+                <br>
+                <select class="multiple" id="category" data-model="industry">
+                    <option value="all">全选</option>
+                </select>
+            </label>
+            <!--付费类型-->
+            <!-- <label>
+                <span style="margin-left:-10px;margin-bottom:-10px ">付费类型</span>
+                <br>
+                <select class="multiple" id="payStatus" data-model="playType">
+                    <option value="all">全选</option>
+                </select>
+            </label> -->
+            <!--地区-->
+            <label>
+                <span style="margin-left:-10px;margin-bottom:-10px ">地区</span>
+                <br>
+                <select class="multiple" id="distract" data-model="distract">
+                    <option value="all">全选</option>
+                </select>
+            </label>
+            <!--是否排除纷享数据-->
+            <label>
+                <span style="margin-left:-10px;margin-bottom:-10px ">是否排除纷享数据</span>
+                <br>
+                <select class="multiple" id="removedata" data-model="removedata">
+                    <option value="0">否</option>
+                    <option value="1" selected>是</option>
+                </select>
+            </label>
+            <!--企业类型-->
+            <label style="margin-top:20px">
+                <span style="margin-left:-10px;margin-bottom:-10px">企业类型</span>
+                <br>
+                <select class="multiple" id="entType" data-model="entType">
+                    <option value="all">全选</option>
+                </select>
+            </label>
+            <!--开通账号数量-->
+            <label style="margin-top:20px">
+                <span style="margin-left:-10px;margin-bottom:-10px">开通账号数量</span>
+                <br>
+                <select class="multiple" id="accountNum" data-model="accountNum">
+                    <option value="all">全选</option>
+                </select>
+            </label>
+        </p>
+        <p class="filter-search">
+            <label for=" ">
+                <span style="height:30px; ">时间段</span >
+                    <br>
+                    <br>
+                    <input type="text" id="date">
+                </label>
+
+                   <label class="timetype"  for="">
+                   <span style="display:inline-block;margin-left:-15px;color:#ADADAD;margin-right:20px;position: absolute;margin-top:-40px">粒度</span>
+                <button class="active" data-timetype="0" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px">日</button>
+                <button data-timetype="1">周</button>
+                <button data-timetype="2">月</button>
+                <a class="icon help"></a>
+            </label>
+            <button class="search">查看</button>
+            <button class="reset">重置</button>
+        </p>
+    </section>
+    <div style="border:1px solid #B4B4B4; margin-left:20px;border-top-left-radius: 10px;border-top-right-radius:10px;margin-right:10px;margin-bottom: 20px;">
+        <div id="lineChart">
+            <div class="label ">
+                <span>feed信息类型</span>
+                <select id="session">
+                    <option value="all" selected>全部</option>
+                </select>
+                <span>feed元素类别</span>
+                <select id="sessionOne">
+                    <option value="all" selected>全部</option>
+                </select>
+            </div>
+            <div class="line" id="lineFeed">
+            </div>
+        </div>
+        <!--数据列表展示区域-->
+        <p style="margin-top:40px;margin-left:20px;font-size: 20px;font-weight: bold; ">feed信息数据指标概览</p>
+        <button type="button" class="download ">下载</button>
+        <section class="retention-table coopFeed" id="userRe">
+            <!--第一部分图表-->
+        </section>
+    </div>
+    <div class="linebox">
+        <p class="sessiontype">
+            <button type="button" class="active" data-sessiontype="0">发送feed数量</button>
+            <button type="button" data-sessiontype="1" style="border-top-right-radius: 5px;border-bottom-right-radius: 5px;">发送feed人数</button>
+            <!--第二部分图表-->
+        </p>
+        <div id="chartArea">
+            <div class="pie" id="pieFeed">
+            </div>
+            <div class="pillar" id="pillarFeed">
+            </div>
+        </div>
+        <p style="margin-top:60px;margin-left:20px;font-size: 20px; font-weight: bold">feed信息类型指标概览</p>
+        <button type="button" class="download">下载</button>
+        <section class="retention-table " id="userReDate">
+        </section>
+    </div>
+    <div class="linebox">
+        <div id="chartAreaTwo">
+            <div class="pieTwo" style="width:49%;height:500px" id="pieTwoFeed">
+            </div>
+            <div class="pillarTwo" style="width:49%;height:500px" id="pillarTwoFeed">
+            </div>
+        </div>
+        <p style="margin-top:40px;margin-left:20px;font-size: 20px;font-weight: bold; ">按feed元素类别概览</p>
+        <button type="button" class="download ">下载</button>
+        <section class="retention-table" id="withdrawList">
+        </section>
+    </div>
+</div>
+<script type="text/template" id="tiptemplate">
+    <div class="tips" id="tip">
+        <div class="corner"></div>
+        <p><span class="highlight">发送feed数量: </span>统计范围内，发送成功的feed总数量</p>
+        <p><span class="highlight">发送feed人数: </span>统计范围内，成功发送feed的用户数量，按用户id去重</p>
+        <p><span class="highlight">人均: </span>发送feed数量/发送feed人数</p>
+    </div>
+</script>

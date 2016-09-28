@@ -1,0 +1,107 @@
+<div class="p-entSession">
+    <!--筛选操作区域-->
+    <section class="retention-filter">
+        <p class="firstLine" style="padding-left:20px">
+            <!--企业规模-->
+            <label for="">
+                <span style="margin-left:-10px">企业规模</span>
+                <br>
+                <select class="multiple" id="scope" data-model="scope">
+                    <option value="all">全选</option>
+                </select>
+            </label>
+            <!--行业类别-->
+            <label>
+                <span style="margin-left:-10px">行业类别</span>
+                <br>
+                <select class="multiple" id="category" data-model="industry">
+                    <option value="all">全选</option>
+                </select>
+            </label>
+            <!--付费类型-->
+            <!--  <label>
+
+                <span style="margin-left:-10px;margin-bottom:-10px ">付费类型</span>
+                <br>
+                <select class="multiple" id="payStatus" data-model="playType">
+                    <option value="all">全选</option>
+                </select>
+            </label> -->
+            <!--地区-->
+            <label>
+                <span style="margin-left:-10px;margin-bottom:-10px ">地区</span>
+                <br>
+                <select class="multiple" id="distract" data-model="distract">
+                    <option value="all">全选</option>
+                </select>
+            </label>
+            <!--是否排除纷享数据-->
+            <label>
+                <span style="margin-left:-10px;margin-bottom:-10px ">是否排除纷享数据</span>
+                <br>
+                <select class="multiple" id="removedata" data-model="removedata">
+                    <option value="0">否</option>
+                    <option value="1" selected>是</option>
+                </select>
+            </label>
+            <!--企业类型-->
+            <label style="margin-top:20px">
+                <span style="margin-left:-10px;margin-bottom:-10px">企业类型</span>
+                <br>
+                <select class="multiple" id="entType" data-model="entType">
+                    <option value="all">全选</option>
+                </select>
+            </label>
+            <!--开通账号数量-->
+            <label style="margin-top:20px">
+                <span style="margin-left:-10px;margin-bottom:-10px">开通账号数量</span>
+                <br>
+                <select class="multiple" id="accountNum" data-model="accountNum">
+                    <option value="all">全选</option>
+                </select>
+            </label>
+        </p>
+        <p class="filter-search">
+            <label for=" ">
+                <span style="height:30px; ">起止时间</span >
+                    <br>
+                    <br>
+                    <input type="text" id="date">
+                </label>
+
+                <label class="timetype" for="">
+                    <span style="display:inline-block;margin-left:-15px;color:#ADADAD;margin-right:20px;position: absolute;margin-top:-40px">粒度</span>
+                <button class="active" data-timetype="0" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px">日</button>
+                <button data-timetype="1">周</button>
+                <button data-timetype="2">月</button>
+                <a class="icon help"></a>
+            </label>
+            <button class="search">查看</button>
+            <button class="reset">重置</button>
+        </p>
+    </section>
+    <div class="linebox">
+        <div id="lineChart">
+            <div class="line" id="lineMeeting">
+            </div>
+        </div>
+        <!--数据列表展示区域-->
+        <p style="margin-top:40px;margin-left:20px;font-size: 20px;font-weight: bold; ">会议助手指标概览</p>
+        <button type="button" class="download ">下载</button>
+        <section class="project-table" id="userRe">
+        </section>
+    </div>
+    <script type="text/template" id="tiptemplate">
+        <div class="tips" id="tip">
+            <div class="corner"></div>
+            <p><span class="highlight">新增会议数: </span>所有创建时间在统计范围内的会议数量</p>
+            <p><span class="highlight">开始会议数: </span>所有开始时间在统计范围内的会议数量</p>
+            <p><span class="highlight">总参会人数: </span>所有开始时间在统计范围内的会议的参会人数和值，无需用参会人id进行去重，直接加和。如，某用户在同一统计范围参加多个会议，均需要被计入</p>
+            <p><span class="highlight">平均参会人数: </span>所有开始时间在统计范围内的会议，总参会人数/开始会议数量</p>
+            <p><span class="highlight">会议转任务次数: </span>所有开始时间在统计范围内的会议，被点击标记为任务的操作次数，无需用任务创建者的用户id去重，若一个会议被同一个用户多次标记为任务，需记为多次。</p>
+            <p><span class="highlight">总签到人数: </span>所有开始时间在统计范围内的会议，签到人数和值，无需用签到人id进行去重，直接加和。若某用户在同一统计范围因参加多个会议进行多次签到，均需要被计入</p>
+            <p><span class="highlight">平均签到率: </span>所有开始时间在统计范围内的会议，总签到人数/总参会人数</p>
+            <p><span class="highlight">提问数量: </span>所有开始时间在统计范围内的会议，被提问的次数，与提问用户id无关，若同一个用户提问多次，均需要计入</p>
+            <p><span class="highlight">存在纪要会议数量: </span>所有开始时间在统计范围内的会议中，存在会议纪要的会议数量，若一个会议存在多份会议纪要，只能被计入一次</p>
+        </div>
+    </script>

@@ -1,0 +1,514 @@
+@import "../commons/basic.scss";
+@import "../commons/variable.scss";
+@import "../commons/_widget.scss";
+
+/*企信会话样式*/
+
+.p-entSession {
+    font-size: measure(14px);
+    width: 100%;
+    #date {
+        margin-left: measure(7px);
+    }
+    p {
+        font-size: measure(15px);
+    }
+    .retention-filter {
+        height: measure(270px);
+        margin-bottom: measure(40px);
+    }
+    .retention-filter p {
+        background: white;
+        color: #ADADAD;
+        padding: measure(10px);
+        label {
+            display: inline-block;
+            width: measure(310px);
+            height: measure(70px);
+            span {
+                padding: 0 measure(10px);
+            }
+        }
+    }
+    .retention-filter .filter-search {
+        border-bottom: measure(2px) solid #EFEFEF;
+        height: measure(130px);
+        text-align: right;
+        margin-top: measure(-20px);
+        button {
+            cursor: pointer;
+            height: measure(40px);
+            line-height: measure(40px);
+        }
+        .reset {
+            width: measure(100px);
+            margin-left: measure(10px);
+            display: inline-block;
+            cursor: pointer;
+            background-color: #FAAC3E;
+            border: none;
+            margin-top: measure(55px);
+            margin-right: measure(20px);
+            font-size: measure(15px);
+            float: right;
+            font-weight: bold;
+            color: #fff;
+            border-radius: measure(5px);
+            outline: none;
+        }
+        label {
+            width: measure(400px);
+            float: left;
+            text-align: left;
+            margin-top: measure(20px);
+        }
+        .timetype {
+            margin-top: measure(60px);
+            width: measure(250px);
+            margin-left: measure(-20px);
+            .helps {
+                display: none;
+                z-index: 500;
+                // padding: measure(15px) measure(25px) measure(26px);
+                background: #555;
+                color: #fdfdfd;
+                filter: alpha(opacity=90);
+                opacity: 0.9;
+                width: measure(400px);
+                max-width: measure(350px);
+                .corner {
+                    position: absolute;
+                    height: measure(0px);
+                    left: measure(-15px);
+                    top: measure(5px);
+                    width: measure(0px);
+                    overflow: hidden;
+                    font-size: 0;
+                    line-height: 0;
+                    border-color: transparent #555 transparent transparent;
+                    border-style: dashed solid dashed dashed;
+                    border-width: measure(8px);
+                }
+                .highlight {
+                    color: #4BD8DF;
+                }
+                p {
+                    font-size: measure(10px);
+                    margin-bottom: measure(10px);
+                    background: #555;
+                    color: #fdfdfd;
+                    filter: alpha(opacity=90);
+                    opacity: 0.9;
+                }
+            }
+        }
+        .timetype button {
+            display: inline;
+            height: measure(40px);
+            width: measure(70px);
+            padding: 0;
+            cursor: pointer;
+            color: #000;
+            margin-left: measure(-5px);
+            border: measure(1px) solid #DDDDDD;
+            background-color: #fff;
+            outline: none;
+            font-weight: bold;
+            &.active {
+                background: #DDDDDD;
+            }
+            &:first-child {
+                border-top-left-radius: measure(5px);
+                border-bottom-left-radius: measure(5px);
+                margin-left: measure(40px);
+            }
+            &:last-child {
+                border-top-right-radius: measure(5px);
+                border-bottom-right-radius: measure(5px);
+                margin-left: measure(-5px);
+            }
+        }
+        .timetype button:nth-child(4) {
+            border-top-right-radius: measure(5px);
+            border-bottom-right-radius: measure(5px);
+            margin-left: measure(-5px);
+        }
+        .search {
+            width: measure(100px);
+            display: inline-block;
+            cursor: pointer;
+            background-color: #FAAC3E;
+            border: none;
+            margin-right: measure(10px);
+            margin-top: measure(55px);
+            font-weight: bold;
+            border-radius: measure(5px);
+            outline: none;
+        }
+    }
+    .retention-filter .filter-search-app {
+        margin-top: measure(-40px);
+    }
+    #lineChart {
+        width: 100%;
+        margin: auto;
+        position: relative;
+        text-align: center;
+        margin-top: measure(20px);
+        .line {
+            width: 100%;
+            height: measure(500px);
+        }
+        .label {
+            margin-top: measure(20px);
+        }
+    }
+    .firstLine {
+        border-top: measure(2px) solid #EFEFEF;
+    }
+    .sessiontype {
+        display: block;
+        text-align: center;
+        margin-bottom: measure(50px);
+        margin-top: measure(20px);
+    }
+    .sessiontype button {
+        display: inline-block;
+        height: measure(40px);
+        width: measure(100px);
+        cursor: pointer;
+        background-color: white;
+        border: measure(1px) solid #ddd;
+        border-radius: measure(5px);
+        border-left: 1px solid #ccc;
+        margin-left: (-10px);
+        color: #444;
+        font-weight: bold;
+        outline: none;
+        &:nth-child(1) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-left: measure(40px);
+        }
+        &:nth-child(2) {
+            border-radius: 0;
+        }
+        &:nth-child(3) {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        &.active {
+            background: #FAAC3E;
+            color: white;
+            border-color: #FAAC3E;
+        }
+    }
+    .m-table {
+        tr:nth-child(1) {
+            background-color: #E6E6E6;
+        }
+    }
+}
+
+.p-onlineTer {
+    .retention-filter {
+        height: measure(150px); //在线-分终端版本,在线分应用页面CSS样式
+    }
+    .serIndictor button {
+        &:nth-child(3) {
+            border-top-right-radius: measure(5px);
+            border-bottom-right-radius: measure(5px);
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+    .retention-table {
+        td {
+            width: measure(500px);
+        }
+    }
+    .m-table {
+        tr:nth-child(1) {
+            background-color: #fff;
+        }
+    }
+}
+
+.overView {
+    .m-table {
+        tr:nth-child(1) {
+            background-color: #fff;
+        }
+    }
+}
+
+.serIndictor {
+    display: block;
+    text-align: center;
+    margin-bottom: measure(50px);
+    margin-top: measure(20px);
+}
+
+.serIndictor button {
+    display: inline-block;
+    height: measure(40px);
+    width: measure(150px);
+    cursor: pointer;
+    color: #444;
+    background-color: white;
+    border: measure(1px) solid #ccc;
+    border-radius: measure(5px);
+    margin-left: (-10px);
+    font-weight: bold;
+    outline: none;
+    &.active {
+        background: #FAAC3E;
+        color: white;
+        border-color: #FAAC3E;
+    }
+    &::nth-child(1) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    &:nth-child(2) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+#chartArea {
+    width: 100%;
+    height: 500px;
+    margin: auto;
+    .pie,
+    .pillar {
+        display: inline-block;
+        width: 48%;
+        height: measure(550px);
+    }
+    .lineTwo {
+        width: 100%;
+        height: measure(500px);
+    }
+    .line {
+        width: 100%;
+        height: measure(500px);
+    }
+}
+
+#chartAreaTwo {
+    width: 100%;
+    height: 500px;
+    margin: auto;
+    .pieTwo,
+    .pillarTwo {
+        display: inline-block;
+        width: 49%;
+        height: measure(550px);
+    }
+}
+
+.label {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    span {
+        position: absolute;
+        margin-top: -20px;
+        font-weight: bolder;
+        color: #ADADAD;
+    }
+    select {
+        height: measure(40px);
+    }
+}
+
+.entInfo-table {
+    width: 100%;
+    .m-table {
+        width: 100%;
+        td {
+            width: measure(450px);
+        }
+    }
+    display: inline-block;
+    th {
+        font-size: 0.34568rem;
+        background-color: #6B6B6B;
+        height: 0.98765rem;
+        color: #fff;
+    }
+}
+
+.bankCard-table {
+    width: 100%;
+    .m-table {
+        width: 100%;
+        td {
+            width: measure(500px);
+        }
+    }
+    display: inline-block;
+    th {
+        font-size: 0.34568rem;
+        background-color: #6B6B6B;
+        height: 0.98765rem;
+        color: #fff;
+    }
+}
+
+.serInfo-table {
+    width: 100%;
+    .m-table {
+        width: 100%;
+        td {
+            width: measure(550px);
+        }
+    }
+    display: inline-block;
+    th {
+        font-size: 0.34568rem;
+        background-color: #6B6B6B;
+        height: 0.98765rem;
+        color: #fff;
+    }
+}
+
+.pk-table,
+.project-table {
+    width: 100%;
+    .m-table {
+        width: 100%;
+        td {
+            width: measure(650px);
+        }
+    }
+    display: inline-block;
+    th {
+        font-size: 0.34568rem;
+        background-color: #6B6B6B;
+        height: 0.98765rem;
+        color: #fff;
+    }
+}
+
+.linebox {
+    border: 1px solid #B4B4B4;
+    margin-left: measure(20px);
+    border-top-left-radius: measure(10px);
+    border-top-right-radius: measure(10px);
+    margin-right: measure(10px);
+    margin-bottom: measure(20px);
+}
+
+.m-table {
+    border-collapse: collapse;
+    background-color: #fff;
+    display: inline-block;
+    margin-bottom: measure(40px);
+    width: 100%;
+    td {
+        width: measure(400px);
+        height: measure(40px);
+        text-align: center;
+        font-size: measure(14px);
+        border-bottom: measure(1px) solid #E5E5E5;
+    }
+    th {
+        font-size: measure(14px);
+        background-color: #6B6B6B;
+        height: measure(40px);
+        color: #fff;
+        span {
+            cursor: pointer;
+        }
+        .ascico,
+        .desico {
+            display: none;
+        }
+        &.asc {
+            .ascico {
+                display: inline;
+            }
+        }
+        &.des {
+            .desico {
+                display: inline;
+            }
+        }
+    }
+    tr:hover {
+        background-color: #E2EDFB;
+    }
+}
+
+.retention-table {
+    width: 100%;
+    .m-table {
+        width: 100%;
+    }
+    display: inline-block;
+    td {
+        width: measure(400px);
+    }
+    th {
+        font-size: 0.34568rem;
+        background-color: #6B6B6B;
+        height: 0.98765rem;
+        color: #fff;
+    }
+}
+
+.coopFeed {
+    td {
+        width: measure(500px);
+    }
+}
+
+
+/**公共样式部分**/
+
+select {
+    width: measure(200px);
+    height: measure(26px);
+    display: inline-block;
+    border: measure(1px) solid #FAAC3E;
+    font-size: measure(15px);
+    border-radius: measure(5px);
+    margin-top: measure(10px);
+    font-weight: bold;
+}
+
+.download {
+    width: measure(100px);
+    height: measure(40px);
+    display: inline-block;
+    font-size: measure(15px);
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+    color: #fff;
+    background-color: #FAAC3E;
+    border: measure(1px) solid #FAAC3E;
+    border-radius: measure(5px);
+    outline: none;
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    margin-bottom:measure(20px);
+    margin-right: measure(20px);
+}
+
+.search {
+    width: measure(80px);
+    height: measure(30px);
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 0;
+    font-size: measure(15px);
+}

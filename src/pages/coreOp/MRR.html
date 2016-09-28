@@ -1,0 +1,180 @@
+<div class="totalcount MRR">
+    <div class="nav">
+        <!--筛选操作区域-->
+        <section class="totalcount-filter">
+            <p class="firstLine" style="padding-left:20px">
+                <!--起止日期-->
+                <!--企业规模-->
+                <!--  <label for="">
+                    <span style="margin-left:-10px">企业规模</span>
+                    <br>
+                    <select class="multiple" data-model="scope" id="scope">
+                        <option value="all">全选</option>
+                    </select>
+                </label> -->
+                <!--付费状态-->
+                <!--  <label for="">
+                    <span style="margin-left:-10px">付费状态</span>
+                    <br>
+                    <select id="payStatus" class="multiple" data-model="playType">
+                        <option value="all">全选</option>
+                    </select>
+                </label> -->
+                <!--行业类型-->
+                <label>
+                    <span style="margin-left:-10px">行业类别</span>
+                    <br>
+                    <select class="multiple" id="category" data-model="industry">
+                        <option value="all">全选</option>
+                    </select>
+                </label>
+                <!--开通账号数量-->
+                <label style="margin-top:20px">
+                    <span style="margin-left:-10px;margin-bottom:-10px">开通账号数量</span>
+                    <br>
+                    <select class="multiple" id="accountNum" data-model="accountNum">
+                        <option value="all">全选</option>
+                    </select>
+                </label>
+                <!--地区-->
+                <label>
+                    <span style="margin-left:-10px;margin-bottom:-10px ">地区</span>
+                    <br>
+                    <select class="multiple" id="distract" data-model="distract">
+                        <option value="all">全选</option>
+                    </select>
+                </label>
+                <!--渠道id-->
+                <!-- <label>
+                    <span style="margin-left:-10px;margin-bottom:-10px">企业来源类型</span>
+                    <br>
+                    <select class="multiple" id="sourceId" data-model="industry">
+                        <option value="all">全选</option>
+                    </select>
+                </label> -->
+                <!--企业来源类型-->
+                <label style="margin-top:20px">
+                    <span style="margin-left:-10px;margin-bottom:-10px">活跃度</span>
+                    <br>
+                    <select class="multiple" id="actDegree" data-model="active">
+                        <option value="all">全选</option>
+                    </select>
+                </label>
+                <!--企业类型-->
+                <!-- <label style="margin-top:20px">
+                    <span style="margin-left:-10px;margin-bottom:-10px">企业类型</span>
+                    <br>
+                    <select class="multiple" id="entType" data-model="entType">
+                        <option value="all">全选</option>
+                    </select>
+                </label> -->
+            </p>
+            <p class="filter-search">
+                <label for="">
+                    <span style="height:30px;">时间段</span >
+                    <br>
+                    <br>
+                    <input type="text" id="date" style="margin-left:7px">
+                </label>
+
+                <!-- <label class="timetype" style="z-index: 10">
+                     <span style="display:inline-block;margin-left:-15px;color:#ADADAD;margin-right:20px;position: absolute;margin-top:-40px">粒度</span>
+                    <button class="active" data-timetype="0" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px">日</button>
+                    <button data-timetype="1">周</button>
+                    <button data-timetype="2">月</button>
+                    <a class="icon help"></a>
+                </label> -->
+                <button class="check">查看</button>
+                <button class="resetTotal">重置</button>
+            </p>
+        </section>
+    </div>
+    <div id="next">
+        <!--展示指标-->
+        <select class="subSelect xClass" style="margin-left:20px">
+            <option value="1" selected>月签约订单金额</option>
+            <option value="2">月MRR</option>
+            <option value="3">月新购MRR</option>
+            <option value="4">月增购MRR</option>
+            <option value="5">月减购MRR</option>
+            <option value="6">月退订MRR</option>
+            <option value="7">月金额流失率</option>
+            <option value="8">月金额续约率（含增购）</option>
+            <option value="9">月金额续约率（不含增购）</option>
+            <option value="10">LTV</option>
+        </select>
+        <div class="line" id="lineMrr"></div>
+        <select class="subSelect yClass">
+            <option value="">默认为空</option>
+            <option value="1" disabled>月签约订单金额</option>
+            <option value="2">月MRR</option>
+            <option value="3">月新购MRR</option>
+            <option value="4">月增购MRR</option>
+            <option value="5">月减购MRR</option>
+            <option value="6">月退订MRR</option>
+            <option value="7">月金额流失率</option>
+            <option value="8">月金额续约率（含增购）</option>
+            <option value="9">月金额续约率（不含增购）</option>
+            <option value="10">LTV</option>
+        </select>
+    </div>
+    <button type="button" class="download">下载</button>
+    <section id="below">
+    </section>
+    <script type="text/template" id="tabletemplate">
+        <table class="m-table">
+            <thead>
+                <tr>
+                    <% _.each(thead,function( item , index ){ %>
+                        <th>
+                            <span><%=item%></span>
+                            <b class="ascico">↑</b>
+                            <b class="desico">↓</b>
+                        </th>
+                        <% }) %>
+                </tr>
+            </thead>
+            <tbody>
+                <% _.each(tbody,function( items , index ){ %>
+                    <tr>
+                        <% _.each(items,function( item ){%>
+                            <td>
+                                <%=item%>
+                            </td>
+                            <%})%>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </script>
+    <script type="text/template" id="tbodytemplate">
+        <% _.each(tbody,function( items , index ){ %>
+            <tr>
+                <% _.each(items,function( item ){%>
+                    <td>
+                        <%=item%>
+                    </td>
+                    <%})%>
+            </tr>
+            <% }) %>
+    </script>
+    <script type="text/template" id="tiptemplate">
+        <div class="tips" id="tip">
+            <div class="corner"></div>
+            <p><span class="highlight">总体说明：</span>1.下述所有指标的定义/算法描述中提到的订单，都指的是已审核通过且在统计月份内生效的付费产品订单，或者是订单中的付费产品子订单。计入金额时，与该订单实际付款方式、到帐方式、是否到帐无关，直接计入订单中记录的应收金额。
+                <br/> 2.计算周期：每月4日0点开始计算上月1日零点至本月1号零点的所有审核通过的订单。
+                <br/>3.为了反映历史数据可能存在的随时调整情况，每月需要启动一次全量历史数据的重算，所以在不同的现实时间查看同一个历史事件范围的数据，结果可能不一致。</p>
+            <p><span class="highlight">月签约订单金额：</span>每月发生的新订单关联的现金总收入。</p>
+            <p><span class="highlight">月MRR： </span>在本月开始生效的每一笔订单按照订单性质分拆到月，将每个月的所有企业贡献的不同类型MRR进行计算，计算公式如下： 本月MRR=上月MRR+新购MRR+增购MRR-减购MRR-退订MRR，结果保留整数，四舍五入。
+            </p>
+            <p><span class="highlight">月新购MRR： </span>企业首次向纷享付费时产生的订单，将其总金额除以该订单生效月份数的集过计入为生效第一个月的新购MRR，保留整数、四舍五入。</p>
+            <p><span class="highlight">月增购MRR： </span>企业非首次向纷享付费产生的订单，且其订单金额除以该订单生效月份数的结果大于该企业上月的MRR，则超出的部分记为该订单生效首月的增购MRR，增购可以发生在续约时或者续约前，续约前签署的增购需要等到续约发生当月才能被计入，结果保留整数、四舍五入。</p>
+            <p><span class="highlight">月减购MRR： </span>企业非首次向纷享付费产生的订单，且其订单金额除以该订单生效月份数的结果小于该企业上月的MRR，则减少的部分记为该订单生效首月的减购MRR，减购可以发生在续约时或者续约前，续约前签署的减购需要等到续约发生当月才能被计入，结果保留整数、四舍五入。</p>
+            <p><span class="highlight">月退订MRR： </span>企业在使用中途退费或者不续约的情况下，算作退订的MRR，退订MRR在中途退费的生效月或者原订单失效后的第一个月计入，若中途退费摊分到月的退款金额大于现有MRR，则在原订单剩余的生效月份内，大于部分记为退订MRR且为负数；若中途退费摊分到月的退款金额小于现有MRR，则小于部分转记为减购MRR，持续至原订单失效。结果保留整数、四舍五入。</p>
+            <p><span class="highlight">月金额流失率：</span>统计范围内每月，（当月退订MRR+当月减购MRR）/上月MRR，结果保留百分位下两位小数，四舍五入。</p>
+            <p><span class="highlight">月金额续约率（含增购）： </span>统计范围内每月，1-当月金额流失率+（当月增购MRR/上月MRR），结果保留百分位下两位小数，四舍五入。</p>
+            <p><span class="highlight">月金额续约率（不含增购）： </span>统计范围内每月，1-当月金额流失率，结果保留百分位下两位小数，四舍五入。</p>
+            <p><span class="highlight">LTV（客户终身价值）： </span>统计范围内每月，当月MRR/金额流失率（包含当月的前12个月均值），结果保留整数、四舍五入。金额流失率在计算历史数据时，算不到12月均值的，按最大范围月取平均数。</p>
+        </div>
+    </script>
+</div>

@@ -1,0 +1,118 @@
+<div class="retention">
+    <div class="p-retention">
+        <!--筛选操作区域-->
+        <section class="retention-filter">
+            <p class="firstLine" style="padding-left:20px">
+                <!--起止日期-->
+                <!--企业规模-->
+                <label for="">
+                    <span style="margin-left:-10px">企业规模</span>
+                    <br>
+                    <select class="multiple" data-model="scope" id="scope">
+                        <option value="all">全选</option>
+                    </select>
+                </label>
+                <!--付费状态-->
+                <!--  <label for="">
+                    <span style="margin-left:-10px">付费状态</span>
+                    <br>
+                    <select id="active" class="multiple" data-model="playType">
+                        <option value="all">全选</option>
+                    </select>
+                </label> -->
+                <!--行业类型-->
+                <label>
+                    <span style="margin-left:-10px">行业类别</span>
+                    <br>
+                    <select class="multiple" id="category" data-model="industry">
+                        <option value="all">全选</option>
+                    </select>
+                </label>
+                <label>
+                    <span style="margin-left:-10px;margin-bottom:-10px">地区</span>
+                    <br>
+                    <select class="multiple" id="distract" data-model="distract">
+                        <option value="all">全选</option>
+                    </select>
+                </label>
+                <!--企业来源类型-->
+                <label>
+                    <span style="margin-left:-10px;margin-bottom:-10px">企业来源类型</span>
+                    <br>
+                    <select class="multiple" id="sourceId" data-model="industry">
+                        <option value="all">全选</option>
+                    </select>
+                </label>
+                <!--活跃度-->
+                <!-- // <label style="margin-top:20px">
+                //     <span style="margin-left:-10px;margin-bottom:-10px">活跃度</span>
+                //     <br>
+                //     <select class="multiple" id="actDegree" data-model="active">
+                //         <option value="all">全选</option>
+                //     </select>
+                // </label> -->
+                <!--企业类型-->
+                <label style="margin-top:20px">
+                    <span style="margin-left:-10px;margin-bottom:-10px">企业类型</span>
+                    <br>
+                    <select class="multiple" id="entType" data-model="entType">
+                        <option value="all">全选</option>
+                    </select>
+                </label>
+                <!--开通账号数量-->
+                <label style="margin-top:20px">
+                    <span style="margin-left:-10px;margin-bottom:-10px">开通账号数量</span>
+                    <br>
+                    <select class="multiple" id="accountNum" data-model="accountNum">
+                        <option value="all">全选</option>
+                    </select>
+                </label>
+            </p>
+            <p class="filter-search">
+                <label for="">
+                    <span style="height:30px;">时间段</span >
+                    <br>
+                    <br>
+                    <input type="text" id="date" style="margin-left:7px">
+                </label>
+
+                <!--按钮组-->
+                <label class="timetype" for="">
+                <span style="display:inline-block;margin-left:-15px;color:#ADADAD;margin-right:20px;position: absolute;margin-top:0px">粒度</span>
+                    <br>
+                    <br>
+                    <button class="active" data-timetype="0" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px">日</button>
+                    <button data-timetype="1">周</button>
+                    <button data-timetype="2">月</button>
+                    <a class="icon help"></a>
+                </label>
+                <button class="search">查看</button>
+                <button class="reset">重置</button>
+            </p>
+        </section>
+        <div id="lineChart">
+            <div class="label">
+                <button type="button" class="active" data-item="1">新增登录用户留存率</button>
+                <button type="button" data-item="2">新增注册企业留存率</button>
+            </div>
+            <div class="line" id="lineRe" style="width:100%;height: 500px">
+            </div>
+        </div>
+        <!--数据列表展示区域-->
+        <p style="margin-top:40px;margin-left:20px;font-size: 15px;font-weight: bold;">新增登录用户留存率</p>
+        <button type="button" class="download">下载</button>
+        <section class="retention-table" id="userRe">
+        </section>
+        <p style="margin-top:40px;margin-left:20px;font-size: 15px; font-weight: bold">新增注册企业留存率</p>
+        <button type="button" class="download">下载</button>
+        <section class="retention-table" id="userReDate">
+        </section>
+    </div>
+    <script type="text/template" id="tiptemplate">
+        <div class="tips" id="tip">
+            <div class="corner"></div>
+            <p><span class="highlight">新增登录用户留存率: </span>第N日/周/月内该批新用户中的在线人数除以对应日/周/月的新用户人数</p>
+            <p><span class="highlight">新增注册企业留存率: </span> 第N日/周/月内该批新企业中在线人数大于零的企业数量除以对应日/周/月的新增注册企业数</p>
+        </div>
+    </script>
+</div>

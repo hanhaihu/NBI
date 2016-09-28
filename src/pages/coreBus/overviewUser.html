@@ -1,0 +1,65 @@
+<div class="p-page p-entSession overView">
+    <!--筛选操作区域-->
+    <section class="retention-filter" style="height:auto;">
+        <p class="firstLine" style="padding-left:20px">
+            <!--是否排除纷享数据-->
+            <label>
+                <span style="margin-left:-10px;">是否排除纷享数据</span>
+                <br>
+                <select class="multiple" id="removedata" data-model="removedata">
+                    <option value="0">否</option>
+                    <option value="1" selected>是</option>
+                </select>
+            </label>
+            <!--应用版本-->
+            <label for="">
+                <span style="margin-left:-10pxmargin-bottom:-10px ">应用版本</span>
+                <br>
+                <select class="multiple" id="appver" data-model="appver">
+                    <option value="all">全选</option>
+                </select>
+            </label>
+        </p>
+        <p class="filter-search">
+            <label for=" ">
+                <span style="height:30px; ">起止时间</span >
+                    <br>
+                    <br>
+                    <input type="text" id="date">
+                </label>
+                <label class="timetype" for="">
+                    <span style="display:inline-block;margin-left:-15px;color:#ADADAD;margin-right:20px;position: absolute;margin-top:-40px">粒度</span>
+                <button class="active" data-timetype="0" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px">日</button>
+                <button data-timetype="1">周</button>
+                <button data-timetype="2">月</button>
+                <a class="icon help"></a>
+            </label>
+            <button class="search">查看</button>
+            <button class="reset">重置</button>
+        </p>
+    </section>
+    <!--图像展示区域-->
+    <section class="page-chartarea">
+        <p>
+            <span class="chartarea-btns"><button class="active" data-type="0">功能使用次数</button><button data-type="1">功能使用人数</button><button data-type="2">人均使用次数</button><button data-type="3">功能渗透率</button></span>
+        </p>
+        <div class="linebox">
+            <div id="lineChart">
+                <div class="line" style="height:600px;" id="lineUser"></div>
+            </div>
+            <!--数据列表展示区域-->
+            <p style="margin-top:40px;margin-left:20px;font-size: 20px;font-weight: bold; " id='titleTable'>功能使用次数</p>
+            <button type="button" class="download ">下载</button>
+            <section class="project-table" id="userRe">
+            </section>
+        </div>
+    </section>
+    <script type="text/template" id="tiptemplate">
+        <div class="tips" id="tip">
+            <div class="corner"></div>
+            <p><span class="highlight">功能使用次数：</span>统计范围内，对单一业务模块任意功能的用户主动操作总次数，需要排除客户端、服务端自动产生的操作数据（系统自动产生、轮询，UID=0等）</p>
+            <p><span class="highlight">功能使用人数：</span>统计范围内，对单一业务模块的任意功能，产生了主动操作行为的用户人数，需要使用用户id进行去重，同一统计范围内，“功能使用次数”与“功能使用人数”从数据层面是相关联的</p>
+            <p><span class="highlight">人均使用次数：</span>统计范围内，对单一业务模块，功能使用次数/功能使用人数</p>
+            <p><span class="highlight">功能渗透率：</span>统计范围内，功能使用人数/总在线用户数量，代表某个单一模块使用人数占使用纷享逍客产品的总人数的比例</p>
+        </div>
+    </script>

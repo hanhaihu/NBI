@@ -1,0 +1,183 @@
+<div class="p-page p-runaway">
+    <!--<h3>流失数据</h3>-->
+    <!--筛选操作区域-->
+    <section class="page-filter">
+        <!--选择维度-->
+        <p class="filter-weidu">
+            <label for="">
+                <span>展示维度</span>
+                <select id="selectdimension">
+                    <!--  <option value="payType">付费状态</option> -->
+                    <option value="source">企业来源类型</option>
+                    <option value="industry">行业类别</option>
+                    <option value="scope">企业规模</option>
+                    <option value="area">地区</option>
+                    <option value="enterpriseType">企业类型</option>
+                    <option value="establishedAccount">开通账号数量</option>
+                </select>
+            </label>
+        </p>
+        <!--select筛选-->
+        <p class="filter-select">
+            <!--付费状态-->
+            <!--  <label style="margin-left:10px">
+                <span>付费状态</span>
+                <select data-model="payType">
+                </select>
+            </label> -->
+            <!--行业类别-->
+            <label style="margin-left:10px">
+                <span>行业类别</span>
+                <select data-model="industry">
+                </select>
+            </label>
+            <!--企业规模-->
+            <label>
+                <span>企业规模</span>
+                <select data-model="scope">
+                </select>
+            </label>
+            <!--地区-->
+            <label>
+                <span>地区</span>
+                <select data-model="area">
+                </select>
+            </label>
+            <!--企业来源类型-->
+            <label>
+                <span>企业来源类型</span>
+                <select data-model="source">
+                </select>
+            </label>
+            <!--      <label style="margin-left:10px;margin-top:-20px">
+                <span>活跃度</span>
+                <select data-model="activity">
+                </select>
+            </label> -->
+            <!--企业类型-->
+            <label style="margin-top:20px">
+                <span style="margin-left:-10px;margin-bottom:-18px">企业类型</span>
+                <br>
+                <select data-model="enterpriseType">
+                </select>
+            </label>
+            <!--开通账号数量-->
+            <label style="margin-top:20px">
+                <span style="margin-left:-10px;margin-bottom:-18px">开通账号数量</span>
+                <br>
+                <select data-model="establishedAccount">
+                </select>
+            </label>
+        </p>
+        <!--日月周切换及查看-->
+        <p class="filter-searchs">
+            <!--起止日期-->
+            <label>
+                <span style=" position:absolute;margin-left:20px;color:#ADADAD;margin-top: -30px;">时间段</span>
+                </span>
+                <input type="text" id="date">
+            </label>
+            <!--按钮组-->
+            <label class="timetype" for="">
+                <span style="display:inline-block;margin-left:-5px;color:#ADADAD;margin-right:20px;position: absolute;margin-top:-30px;width:40px">粒度</span>
+                <button class="active" data-timetype="0" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px">日</button>
+                <button data-timetype="1">周</button>
+                <button data-timetype="2">月</button>
+                <a class="icon help"></a>
+            </label>
+            <label class="searchs">
+                <button class="searchinfo">查看</button>
+                <button class="reset">重置</button>
+            </label>
+        </p>
+    </section>
+    <!--图像展示区域-->
+    <section class="page-chartarea">
+        <p>
+            <span class="chartarea-btns"><button class="active" data-type="0">流失用户数</button><button data-type="1">流失企业数</button></span>
+        </p>
+        <div id="chartarea">
+        </div>
+    </section>
+    <!--数据列表展示区域-->
+    <section class="page-table">
+        <p class="downloads">
+            <button>下载</button>
+        </p>
+        <table class="m-tables">
+            <thead>
+                <tr>
+                    <th>累计流失用户</th>
+                    <th>累计流失用户占比</th>
+                    <th>累计流失企业</th>
+                    <th>累计流失企业占比</th>
+                </tr>
+            </thead>
+            <tbody class="tableacc">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="m-tables">
+            <thead>
+                <tr>
+                    <th rowspan="2">展示维度</th>
+                    <th colspan="2">流失用户数</th>
+                    <th colspan="2">流失企业数</th>
+                </tr>
+                <tr>
+                    <th class="runsorta" data-index="1">数值<b class="ascico">↑</b><b class="desico">↓</b></th>
+                    <th class="runsorta" data-index="2">占比<b class="ascico">↑</b><b class="desico">↓</b></th>
+                    <th class="runsorta" data-index="3">数值<b class="ascico">↑</b><b class="desico">↓</b></th>
+                    <th class="runsorta" data-index="4">占比<b class="ascico">↑</b><b class="desico">↓</b></th>
+                </tr>
+            </thead>
+            <tbody class="tableoverview">
+                <!-- -->
+            </tbody>
+        </table>
+        <!-- -->
+        <table class="m-tables">
+            <thead>
+                <tr>
+                    <th rowspan="2" class="runsortb" data-index="0">日期<b class="ascico">↑</b><b class="desico">↓</b></th>
+                    <th rowspan="2">展示维度</th>
+                    <th colspan="2">
+                        流失用户数
+                    </th>
+                    <th colspan="2">
+                        流失企业数
+                    </th>
+                </tr>
+                <tr>
+                    <th class="runsortb" data-index="2">
+                        数值<b class="ascico">↑</b><b class="desico">↓</b>
+                    </th>
+                    <th class="runsortb" data-index="3">
+                        占比<b class="ascico">↑</b><b class="desico">↓</b>
+                    </th>
+                    <th class="runsortb" data-index="4">
+                        数值<b class="ascico">↑</b><b class="desico">↓</b>
+                    </th>
+                    <th class="runsortb" data-index="5">
+                        占比<b class="ascico">↑</b><b class="desico">↓</b>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="tabledetail">
+                <!-- -->
+            </tbody>
+        </table>
+    </section>
+    <script type="text/template" id="tiptemplate">
+        <div class="tips" id="tip">
+            <div class="corner"></div>
+            <p><span class="highlight">流失用户数: </span> 截至统计节点，30个自然日时间长度内没有任何使用行为（在线时长等于零）的用户数量。</p>
+            <p><span class="highlight">流失企业数: </span> 截至统计节点，30个自然日时间长度内企业内所有用户均没有任何使用行为（该企业总在线时长等于零）的企业数量。</p>
+        </div>
+    </script>
+</div>

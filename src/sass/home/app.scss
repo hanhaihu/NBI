@@ -1,0 +1,541 @@
+//主页面样式
+@import "../commons/basic.scss";
+@import "../commons/variable.scss";
+header {
+    background-color: #F9F9F9;
+    height: measure(60px);
+    color: #fff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    z-index: 99;
+    font-size: measure(14px);
+    line-height: measure(80px);
+    display: block;
+    border-bottom: measure(2px) solid #E8E8E8;
+}
+
+header h3 {
+    margin-left: measure(200px);
+}
+
+header h1 {
+    font-size: measure(20px);
+    line-height: measure(40px);
+    padding-left: measure(20px);
+}
+
+header span {
+    display: inline-block;
+    padding: 0 measure(10px);
+    line-height: measure(40px);
+    cursor: pointer;
+}
+
+header .header-person {
+    float: right;
+    display: inline-block;
+    margin-right: measure(20px);
+    margin-top: measure(20px);
+    width: measure(100px);
+    padding-left: measure(10px);
+    padding-right: measure(10px);
+    text-align: center;
+    line-height: measure(40px);
+    position: relative;
+    color: black;
+}
+
+header .header-person .person-user {
+    font-size: measure(20px);
+    color: #B8B8B8;
+    cursor: pointer;
+}
+
+header .slide:hover section {
+    display: block;
+}
+
+header .explain {
+    position: absolute;
+    right: measure(130px);
+    width: measure(100px);
+    bottom: measure(5px);
+    height: 0.98765rem;
+    line-height: measure(39px);
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    background-color: #FAAC3E;
+    border: none;
+    border-radius: 0.12346rem;
+    outline: none;
+    font-weight: bold;
+}
+
+header .header-person section {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    right: 0px;
+    background-color: #EDEDED;
+    border-bottom-right-radius: measure(4px);
+    border-bottom-left-radius: measure(4px);
+    a:link,
+    a:visited {
+        color: black;
+        text-decoration: none;
+    }
+    a:hover,
+    a:active {
+        color: black;
+        text-decoration: none;
+    }
+}
+
+header .header-person section p:hover {
+    background-color: #DDDDDD;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: measure(180px);
+    font-size: measure(14px);
+    text-align: center;
+    z-index: 100;
+    background: #32303D;
+    border-right: measure(1px) #d2d2d2 solid;
+    a {
+        text-decoration: none;
+    }
+    a:link,
+    a:visited {
+        color: white;
+    }
+}
+
+nav .root {
+    .title {
+        z-index: 200;
+        height: measure(60px);
+        background: url('../../images/title.jpg') 100% 100%;
+        background-size: cover;
+    }
+}
+
+nav>.root>li {
+    text-align: left;
+    height: measure(40px);
+    line-height: measure(40px);
+    cursor: pointer;
+    a {
+        text-decoration: none;
+    }
+}
+
+nav .children {
+    line-height: measure(30px);
+    font-size: measure(15px);
+    li {
+        a {
+            margin-left: measure(20px);
+            text-align: left;
+            position: relative;
+            padding: measure(4px) 0;
+            display: block;
+            width: 100%;
+            color: #fff;
+            font-size: measure(15px);
+            text-decoration: none;
+        }
+    }
+    .active a {
+        color: #FAAC3E;
+    }
+    .active a:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-width: measure(10px) measure(10px) measure(10px) 0;
+        border-style: solid;
+        border-color: transparent #fff transparent transparent;
+        position: absolute;
+        top: measure(8px);
+        left: measure(150px);
+    }
+    .cascading {
+        display: none;
+        background-color: #3C394C;
+        // border-radius: measure(5px);
+        li {
+            margin-left: measure(10px);
+            a {
+                font-size: measure(12px);
+            }
+        }
+        .active a {
+            color: #FAAC3E;
+        }
+        .active a:after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-width: measure(10px) measure(10px) measure(10px) 0;
+            border-style: solid;
+            border-color: transparent #fff transparent transparent;
+            position: absolute;
+            top: measure(8px);
+            left: measure(140px);
+        }
+    }
+    button {
+        display: block;
+        width: 100%;
+        background: #32303D;
+        border: none;
+        color: #fff;
+        font-size: measure(15px);
+        text-align: left;
+        padding-left: measure(20px);
+        cursor: pointer;
+        outline: none;
+    }
+}
+
+.guideType {
+    a {
+        font-size: measure(16px);
+    }
+}
+
+#container {
+    display: block;
+    padding-top: measure(40px);
+    padding-left: measure(180px);
+    box-sizing: border-box;
+    width: 100%;
+    overflow: auto;
+    margin-top: measure(20px);
+}
+
+.hide {
+    display: none;
+}
+
+.statement {
+    width: 100%;
+    font-size: measure(15px);
+    ul {
+        margin-left: measure(20px);
+        margin-top: measure(20px);
+        width: 80%;
+        height: 100%;
+        span {
+            display: block;
+            margin-bottom: measure(20px);
+        }
+        li {
+            height: measure(40px);
+            margin-bottom: measure(30px);
+        }
+    }
+}
+
+//全局样式定义
+
+/* ========提示======*/
+
+.g-toast {
+    position: fixed;
+    left: 50%;
+    top: measure(50px);
+    max-width: measure(600px);
+    z-index: $toast_index;
+    text-align: center;
+    background-color: #C00101;
+    color: #fff;
+    font-size: measure(14px);
+    border-radius: measure(4px);
+    padding: measure(6px) measure(20px);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+.type {
+    display: block;
+    padding: 6px 12px;
+    font-size: measure(14px);
+    line-height: measure(22px);
+    text-decoration: none;
+    font-weight: normal;
+    display: none;
+}
+
+.active {
+    color: #80D4D6;
+}
+
+.icon {
+    display: inline-block;
+    height: 24px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 24px;
+    line-height: 24px;
+    text-indent: -9999px;
+    background-attachment: fixed;
+    background: url('../../images/icon.png') no-repeat 0px -530px;
+    cursor: pointer;
+}
+
+.icon:hover {
+    background: url('../../images/icon.png') no-repeat -23px -530px;
+}
+
+.tip_board {}
+
+.tips {
+    display: none;
+    z-index: 500;
+    padding: measure(15px) measure(25px) measure(26px);
+    background: #555;
+    color: #fdfdfd;
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+    width: measure(350px);
+    // max-width: measure(350px);
+    .corner {
+        position: absolute;
+        height: measure(0px);
+        left: measure(-15px);
+        top: measure(5px);
+        width: measure(0px);
+        overflow: hidden;
+        font-size: 0;
+        line-height: 0;
+        border-color: transparent #555 transparent transparent;
+        border-style: dashed solid dashed dashed;
+        border-width: measure(8px);
+    }
+    .highlight {
+        color: #4BD8DF;
+    }
+    p {
+        font-size: measure(10px);
+        margin-bottom: measure(10px);
+    }
+}
+
+
+/* ========Tip提示======= */
+
+.g-tip {
+    position: fixed;
+    left: 50%;
+    top: measure(50px);
+    max-width: measure(600px);
+    word-wrap: break-word;
+    z-index: $toast_index;
+    text-align: center;
+    background-color: #00842F;
+    color: #fff;
+    letter-spacing: measure(1px);
+    font-size: measure(14px);
+    border-radius: measure(4px);
+    padding: measure(6px) measure(20px);
+    -mox-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    -webkit-box-shadow: 0 0 measure(16px) rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 measure(16px) rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 measure(16px) rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========全局遮罩======= */
+
+.switch-loading {
+    display: none;
+    position: fixed;
+    left: measure(180px);
+    top: measure(60px);
+    right: 0;
+    bottom: 0;
+    background-color: #F9F9F9;
+    div {
+        position: absolute;
+        top: 50%;
+        margin-top: -24px;
+        text-align: center;
+        width: 100%;
+        height: 48px;
+        line-height: 48px;
+        font-size: 24px;
+        vertical-align: top;
+        span {
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            margin-right: 10px;
+            vertical-align: middle;
+            animation: juhua 2s linear infinite;
+            -webkit-animation: juhua 2s linear infinite;
+            background-size: 48px 48px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAOVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC8dlA9AAAAEnRSTlMAgBBAIPCgMOCwYHCQUNBvz8BQ7DU6AAABB0lEQVRIx92VybKDIBBFm3lQQO//f+zjUViJAYlssvBsXMihh2qq6blIa+WUwABGN+BJfAoi8YGgAXEWBKDHwnYWtrEgAfh3wQMYVr8Cir8EroCVBpQT7BAOf8gCQFahZLhc3KydoUIEHFEAApEDYi3Oad5cvPLaR5s/5t+3tct8bUIJZFQqjdkDVcJeWpYUUNSTEZHZDDWIDZkomh9eAXDdLkD5buHdidsBsKvWyk5GJjpJv0eywkWmgVVeqVkUHPUwOLDTwnxKj8MrZWhIO8Rs4jwyMxHqE70P1z8b4pRoihXwNIFEIwT2ZT/EZrj1nYUilBI15lDgS7uyFj6xFKfW7gPf18Ef3WYPEDMYwZ4AAAAASUVORK5CYII=');
+        }
+    }
+}
+
+@keyframes juhua {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@-webkit-keyframes juhua {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.version {
+    width: measure(800px);
+    height: measure(500px);
+    margin-left: measure(-400px);
+    position: fixed;
+    top: measure(100px);
+    left: 55%;
+    right: 0;
+    bottom: 0;
+    background-color: #F1FAFA;
+    border: 1px solid #B3B3B3;
+    display: none;
+    overflow: auto;
+    .tip {
+        color: red;
+        font-size: measure(20px);
+    }
+    .back {
+        display: block;
+        margin-left: measure(20px);
+        margin-top: measure(10px);
+    }
+    .backOne {
+        margin-left: measure(20px);
+    }
+    .coreBus1 p {
+        margin-left: measure(20px);
+    }
+    h4 {
+        margin: measure(10px) auto;
+        font-weight: bold;
+    }
+    .explain {
+        width: measure(780px);
+        height: measure(40px);
+        background-color: #FAAC3E;
+        text-align: center;
+        display: block;
+        line-height: measure(40px);
+        position: fixed;
+        top: measure(100px);
+        margin-top: 0;
+    }
+    div {
+        margin-left: measure(20px);
+        font-family: "Microsoft YaHei" ! important;
+        border: 1px solid #B3B3B3;
+        margin-top: measure(40px);
+        border-radius: measure(3px);
+    }
+    p,
+    span {
+        font-size: measure(15px);
+        margin-top: measure(5px);
+        font-family: "Microsoft YaHei" ! important;
+    }
+    .delete {
+        display: inline-block;
+        width: measure(30px);
+        height: measure(30px);
+        cursor: pointer;
+        line-height: measure(25px);
+        color: #fff;
+        text-align: center;
+        background-color: #C1C1C1;
+        font-size: measure(20px);
+        float: right;
+    }
+}
+
+//  new
+li.new {
+    position: relative;
+}
+
+li.new::after {
+    position: absolute;
+    display: inline-block;
+    content: 'New!';
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    line-height: measure(38px);
+    font-size: measure(15px);
+    color: red;
+}
+
+button.new::after {
+    position: absolute;
+    display: inline-block;
+    content: 'New!';
+    top: 0;
+    bottom: 0;
+    left: 100px;
+    line-height: measure(38px);
+    font-size: measure(15px);
+    color: red;
+}
+
+label.new {
+    position: relative;
+}
+
+label.new::after {
+    position: absolute;
+    display: inline-block;
+    content: 'New!';
+    top: 0;
+    left: 110px;
+    font-size: measure(15px);
+    color: red;
+}
+
+.retention label.new::after {
+    left: 150px;
+}
+
+.p-entSession label.new::after {
+    left: 150px;
+}
+
+.MRR label.new::after {
+    left: 130px;
+}
+
+.page-total label.new::after {
+    left: 130px;
+}

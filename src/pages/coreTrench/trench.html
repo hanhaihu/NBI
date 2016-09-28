@@ -1,0 +1,208 @@
+<div class="trench">
+    <div class="nav">
+        <!--筛选操作区域-->
+        <section class="totalcount-filter">
+            <p class="filter-search" style="padding-left:20px;border-bottom:none;">
+                <label for="">
+                    <span style="margin-left:-10px">监控码生效起止时间</span>
+                    <br>
+                    <br>
+                    <input type="text" id="date1" style="margin-left:0;">
+                </label>
+                <label for="" style='margin-left:30px;'>
+                    <span style="margin-left:-10px">注册转化统计起止时间</span>
+                    <br>
+                    <br>
+                    <input type="text" id="date2" style="margin-left:0;">
+                </label>
+                <label for="" style='margin-left:30px;'>
+                    <span style="margin-left:-10px">企业质量统计时间</span>
+                    <br>
+                    <br>
+                    <input type="text" id="date3" style="margin-left:0;">
+                </label>
+                <label class="timetype" style="margin-left:50px" for="">
+                    <span style="display:inline-block;margin-left:-15px;color:#ADADAD;margin-right:20px;position: absolute;margin-top:-40px">粒度</span>
+                    <button class="active" data-timetype="0" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px">日</button>
+                    <button data-timetype="1">周</button>
+                    <button data-timetype="2">月</button>
+                    <a class="icon help"></a>
+                </label>
+            </p>
+            <p class="filtrate" style="padding-left:20px">
+                <!--推广渠道-->
+                <label for="">
+                    <span style="margin-left:-10px">推广渠道</span>
+                    <br>
+                    <select class="multiple" data-model="scope" id="scope">
+                        <option value="all">全选</option>
+                    </select>
+                </label>
+                <!--广告类型-->
+                <label for="">
+                    <span style="margin-left:-10px">广告类型</span>
+                    <br>
+                    <select id="payStatus" class="multiple" data-model="playType">
+                        <option value="all">全选</option>
+                    </select>
+                </label>
+                <br/>
+                <!--关键字-->
+                <label style="margin-top: 20px;">
+                    <span style="margin-left:-10px;margin-bottom:-10px">关键字</span>
+                    <br>
+                    <input type="text" name="keyPoint" id="autocompleteOne" class="blurInput">
+                    <select id="keyOne" multiple class="slurSelect" data-index='2'></select>
+                </label>
+                <!--监控码-->
+                <label style="margin-top: 20px;">
+                    <span style="margin-left:-10px;margin-bottom:-10px">监控码</span>
+                    <br>
+                    <input type="text" name="watchCode" id="autocompleteTwo" class="blurInput">
+                    <select id="keyTwo" multiple class="slurSelect" data-index='3'></select>
+                </label>
+                <!--计划名称-->
+                <label style="margin-top: 20px;">
+                    <span style="margin-left:-10px">计划名称</span>
+                    <br>
+                    <input type="text" name="planName" id="autocompleteThree" class="blurInput">
+                    <select id="keyThree" multiple class="slurSelect" data-index='4'></select>
+                </label>
+                <!--单元名称-->
+                <label style="margin-top: 20px;">
+                    <span style="margin-left:-10px;margin-bottom:-10px ">单元名称</span>
+                    <br>
+                    <input type="text" name="unitName" id="autocompleteFour" class="blurInput">
+                    <select id="keyFour" multiple class="slurSelect" data-index='5'></select>
+                </label>
+                <!--落地页模板名称-->
+                <label style="margin-top: 20px;">
+                    <span style="margin-left:-10px;margin-bottom:-10px ">落地页模板名称</span>
+                    <br>
+                    <input type="text" name="modelName" id="autocompleteFive" class="blurInput">
+                    <select id="keyFive" multiple class="slurSelect" data-index='6'></select>
+                </label>
+                <!--注册页版本-->
+                <!--<label>
+                    <span style="margin-left:-10px;margin-bottom:-10px">注册页版本</span>
+                    <br>
+                    <input type="text" name="unitName" id="autocompleteFive" class="blurInput">
+                </label>-->
+                <!--企业来源类型-->
+                <!-- <label style="margin-top:20px">
+                    <span style="margin-left:-10px;margin-bottom:-10px">活跃度</span>
+                    <br>
+                    <select class="multiple" id="actDegree" data-model="active">
+                        <option value="all">全选</option>
+                    </select>
+                </label> -->
+            </p>
+            <p class="filter-search">
+                <!--<label for="">
+                    <span style="height:30px;">监控码生效起止时间</span >
+                    <br>
+                    <br>
+                    <input type="text" id="date" style="margin-left:7px">
+                    <span style="height:30px;position: absolute;left:510px" class="countTime">统计起止时间</span>
+                    <input type="text" id="dateTwo">
+                </label>
+                <label class="timetype" style="z-index: 10;margin-left:150px">
+                    <span style="display:inline-block;margin-left:-15px;color:#ADADAD;margin-right:20px;position: absolute;margin-top:-40px">粒度</span>
+                    <button class="active" data-timetype="0" style="border-top-left-radius: 5px; border-bottom-left-radius: 5px">日</button>
+                    <button data-timetype="1">周</button>
+                    <button data-timetype="2">月</button>
+                </label>-->
+                <button class="check">查看</button>
+                <button class="resetTotal">重置</button>
+            </p>
+        </section>
+    </div>
+    <div id="next">
+        <!--展示指标-->
+        <div style="text-align:center;padding-top:20px;">
+            <select class="subSelect xClass" style="margin-right:80px;">
+                <option value="1">落地页PV</option>
+                <option value="2">落地页UV</option>
+                <option value="3">发送验证码点击量</option>
+                <option value="4">发送验证码点击人数</option>
+                <option value="5">下一步按钮点击量</option>
+                <option value="6">下一步按钮点击人数</option>
+                <option value="7" selected>注册成功企业数</option>
+                <option value="8" disabled>总转换率</option>
+            </select>
+            <select class="subSelect yClass">
+                <option value="1">落地页PV</option>
+                <option value="2">落地页UV</option>
+                <option value="3">发送验证码点击量</option>
+                <option value="4">发送验证码点击人数</option>
+                <option value="5">下一步按钮点击量</option>
+                <option value="6">下一步按钮点击人数</option>
+                <option value="7" disabled>注册成功企业数</option>
+                <option value="8" selected>总转换率</option>
+            </select>
+        </div>
+        <div class="line" style="width:100%;margin-top:30px;" id="lineTrenchOne"></div>
+    </div>
+    <button type="button" class="download">下载</button>
+    <section id="belowOne">
+    </section>
+    <div class="lineTwo" style="width:100%;height:500px;" id="lineTrenchTwo"></div>
+    <button type="button" class="download">下载</button>
+    <section id="belowTwo">
+    </section>
+    <script type="text/template" id="tabletemplate">
+        <table class="m-table">
+            <thead>
+                <tr>
+                    <% _.each(thead,function( item , index ){ %>
+                        <th>
+                            <span><%=item%></span>
+                            <b class="ascico">↑</b>
+                            <b class="desico">↓</b>
+                        </th>
+                        <% }) %>
+                </tr>
+            </thead>
+            <tbody>
+                <% _.each(tbody,function( items , index ){ %>
+                    <tr>
+                        <% _.each(items,function( item ){%>
+                            <td>
+                                <%=item%>
+                            </td>
+                            <%})%>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </script>
+    <script type="text/template" id="tbodytemplate">
+        <% _.each(tbody,function( items , index ){ %>
+            <tr>
+                <% _.each(items,function( item ){%>
+                    <td>
+                        <%=item%>
+                    </td>
+                    <%})%>
+            </tr>
+            <% }) %>
+    </script>
+    <script type="text/template" id="tiptemplate">
+        <div class="tips" id="tip">
+            <div class="corner"></div>
+            <p><span class="highlight">落地页PV：</span>统计范围内，注册落地页的页面浏览量（Page View）</p>
+            <p><span class="highlight">落地页UV：</span>统计范围内，注册落地页的独立访客数量（Unique Visitor），计算UV时，以GUID作为用户唯一标识，此标识在用户使用同一设备、同一浏览器、不清Cookies、不使用浏览器隐身模式时保持唯一</p>
+            <p><span class="highlight">发送验证码按钮点击量：</span>统计范围内，在成功访问落地页的独立访客中，进行了“发送验证码”按钮点击的操作次数</p>
+            <p><span class="highlight">发送验证码按钮点击人数：</span>统计范围内，在成功访问落地页的独立访客中，进行了“发送验证码”按钮点击的操作人数</p>
+            <p><span class="highlight">下一步按钮点击量：</span>统计范围内，在点击了“发送验证码”按钮的独立访客中，完成了验证码输入操作并点击“下一步”按钮，请求进入企业信息输入页的操作次数</p>
+            <p><span class="highlight">下一步按钮点击人数：</span>统计范围内，在点击了“发送验证码”按钮的独立访客中，完成了验证码输入操作并点击“下一步”按钮，请求进入企业信息输入页的操作人数</p>
+            <p><span class="highlight">注册成功企业数：</span>统计范围内，在点击了“下一步”进入企业信息输入页的独立访客中，完成企业创建，成功生成的企业账号数量</p>
+            <p><span class="highlight">总转化率：</span>同一统计范围内，注册成功企业数/落地页PV</p>
+            <p><span class="highlight">总在线时长（min）：</span>统计范围内，在注册落地页完成了注册流程、生成ea的企业，在纷享逍客上的用户总在线时长</p>
+            <p><span class="highlight">平均在线时长（min）：</span>统计范围内，在注册落地页完成了注册流程，生成ea的企业，总在线时长/该批企业总用户人数</p>
+            <p><span class="highlight">企业平均员工数：</span>截止统计范围终点，经由注册落地页注册的企业的已开通用户id的数量，除以该批企业数量，每天的结果数据都需要保留</p>
+            <p><span class="highlight">在线企业数：</span>统计范围内，经由注册落地页注册的企业中，用户平均在线时长大于零的企业数量。自注册企业id与经由核心运营1.0完成的在线企业id进行匹配，选出交集，按企业id去重</p>
+            <p><span class="highlight">活跃企业数：</span>统计范围内，经由注册落地页注册的企业中的活跃企业数量，活跃企业定义沿用核心运营指标V2.0，使用企业id去重。自注册企业id与经由核心运营2.0完成的活跃企业id（不分活跃度）进行匹配，选出交集，按企业id去重</p>
+        </div>
+    </script>
+</div>

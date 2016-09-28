@@ -1,0 +1,37 @@
+{
+    "login": true,
+    "privilege": true,
+    "success": true,
+    "value": {
+        "model": [{
+            "cellCount": 5,
+            "column0": 62777,
+            "column1": 6604,
+            "column2": 10,
+            "date": "IOS"
+        }, {
+            "cellCount": 5,
+            "column1": 6605,
+            "column2": 11,
+            "date": "Android"
+        }, {
+            "cellCount": 5,
+            "column0": 30000,
+            "column1": 6606,
+            "column2": 12,
+            "date": "Web"
+        }, {
+            "cellCount": 5,
+            "column0": 62780,
+            "column1": 6607,
+            "column2": 13,
+            "date": "Win"
+        }, {
+            "cellCount": 5,
+            "column0": 62781,
+            "column1": 6608,
+            "column2": 14,
+            "date": "Mac"
+        }]
+    }
+}

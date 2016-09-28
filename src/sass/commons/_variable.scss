@@ -1,0 +1,12 @@
+/**
+ *宽度相关的基本尺寸，用于计算rem
+ */
+$psd_width:1080px; //psd图的宽度
+$psd_height:1920px - 54px;
+
+/**
+ *根据psd图计算出rem单位
+ */
+@function measure($n) {
+    @return $n/($psd_width/320.0 *$minSize)* 1rem;
+}
